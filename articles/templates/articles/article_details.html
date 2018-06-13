@@ -1,0 +1,28 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+
+<div class="container">
+
+  <h2>{{ article.title }}</h2>
+  <hr>
+  <br>
+  <img src="{{ article.thumb.url }}"/>
+  <br>
+  <br>
+  <p>{{ article.body }}</p>
+  <br>
+  <p><b>Published on :-</b><i> {{ article.date }}</i></p>
+  <br>
+  <p><b>Published by :-</b><i> {{ article.author.username }}</i></p>
+  <hr>
+</div>
+
+<br>
+
+
+{% endblock %}

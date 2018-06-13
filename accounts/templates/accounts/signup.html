@@ -1,0 +1,23 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+
+<div class="container">
+  <h3>Signup Form</h3>
+  <hr>
+  <form class="" action="{% url 'accounts:signup' %}" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-primary">Signup</button>
+  </form>
+</div>
+
+
+
+{% endblock %}

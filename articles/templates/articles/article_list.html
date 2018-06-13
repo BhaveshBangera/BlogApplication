@@ -1,0 +1,33 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+      <center><h3>Lists of Articles Published</h3></center>
+      <hr>
+      <br>
+    </div>
+
+
+    {% for article in articles %}
+    <div class="container">
+      <div class="media">
+      <img class="mr-3" src="{{ article.thumb.url }}" style="height: 100px; width: 140px;">
+        <div class="media-body">
+          <b><h2><a href="{% url 'articles:info' slug=article.slug %}">{{ article.title }}</a></h2></b>
+           <p>{{ article.snippet }}</p>
+           <p><b>Published on :-</b><i> {{ article.date }}</i></p>
+           <p><b>Published by :-</b><i> {{ article.author.username }}</i></p>
+        </div>
+      </div>
+      <br>
+      <hr>
+    </div>
+    <br>
+    {% endfor %}
+
+{% endblock %}
